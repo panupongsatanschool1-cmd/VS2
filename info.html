@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติส่วนตัว</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f2f6f1;
+            --card: #ffffff;
+            --line: #dbe5d9;
+            --text: #1c2b22;
+            --muted: #5f7367;
+            --green: #2f7d4f;
+            --green-deep: #1f5b38;
+            --green-soft: #e4f1e7;
+            color-scheme: light;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121a15;
+                --card: #19231d;
+                --line: #2a3a30;
+                --text: #e6efe8;
+                --muted: #93a99a;
+                --green: #5fbf82;
+                --green-deep: #8fd6a9;
+                --green-soft: #213a2b;
+                color-scheme: dark;
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; }
+
+        body {
+            font-family: "IBM Plex Sans Thai", "Noto Sans Thai", "Sarabun", system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+            padding: 48px 20px;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 28px 32px;
+        }
+
+        .card h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--green-deep);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .card h2::before {
+            content: "";
+            width: 6px;
+            height: 1.2em;
+            border-radius: 3px;
+            background: var(--green);
+        }
+
+        /* ประวัติส่วนตัว */
+        dl {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 10px 24px;
+        }
+        dt { color: var(--muted); }
+        dd { font-weight: 500; }
+        dd.name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--green-deep);
+        }
+
+        /* ทักษะ */
+        .skill-title { font-weight: 500; margin-bottom: 14px; }
+        .chips {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .chips li {
+            background: var(--green-soft);
+            color: var(--green-deep);
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* ผลงาน/กิจกรรม */
+        .works {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 14px;
+        }
+        .works li {
+            border-left: 3px solid var(--green);
+            padding-left: 16px;
+        }
+
+        @media (max-width: 520px) {
+            body { padding: 28px 14px; }
+            .card { padding: 22px 20px; }
+            dl { grid-template-columns: 1fr; gap: 0; }
+            dd { margin-bottom: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="card">
+            <h2>ประวัติส่วนตัว</h2>
+            <dl>
+                <dt>ชื่อ</dt>
+                <dd class="name">ภาณุพงศ์ ซาตัน</dd>
+                <dt>อายุ</dt>
+                <dd>20</dd>
+                <dt>ที่อยู่</dt>
+                <dd>555 บางปูเพลซ อ.เมือง จ.สมุทรปราการ</dd>
+                <dt>กำลังศึกษาอยู่ที่</dt>
+                <dd>วิทยาลัยเทคนิคสมุทรปราการ</dd>
+            </dl>
+        </section>
+
+        <section class="card">
+            <h2>ทักษะ</h2>
+            <p class="skill-title">พัฒนาเว็บแบบ Full-stack</p>
+            <ul class="chips">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>Angular</li>
+                <li>PHP</li>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>ผลงาน/กิจกรรมที่เคยทำ</h2>
+            <ul class="works">
+                <li>ผลงาน/กิจกรรมที่เคยทำ: เว็บระบบยืม-คืนอุปกรณ์ YumTech (เชื่อม Google Apps Script และ Google Drive), โครงสร้างแอป Angular แบบ Standalone</li>
+                <li>ฝึกงานด้านการจัดการศึกษาและทำสไลด์นำเสนอ รวมถึงทำ Dashboard และสคริปต์จัดการต่างๆ</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
